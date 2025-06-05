@@ -25,12 +25,21 @@ All steps are implemented in a reproducible Jupyter Notebook and optimized for G
 ## 🗂️ Repository Structure
 
 ├── datasets/
+
 │ ├── sample1.fastq
+
 │ ├── sample2.fastq
+
 │ ├── sample3.fastq
+
 │ └── sample4.fastq
+
 │
+
 ├── pipeline/
+
 │ └── aptamer_search.ipynb
+
 │
+
 ├── README.md
