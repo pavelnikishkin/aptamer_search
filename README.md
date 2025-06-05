@@ -1,20 +1,36 @@
-# aptamer_search
+# 🧬 Nanopore Aptamer Discovery Using Machine Learning
 
-🧬 Nanopore Aptamer Discovery Using Machine Learning
-This project presents a reproducible pipeline for processing nanopore sequencing data to identify candidate aptamers using clustering and machine learning techniques.
+This repository contains the implementation of a pipeline for detecting aptamer candidates from raw nanopore sequencing data using clustering algorithms and transformer-based embeddings.
 
-Key features:
+The study focuses on the identification of aptamers targeting the SARS-CoV-2 spike protein, based on data generated through **nanopore sequencing** and processed with modern **bioinformatics** and **machine learning** tools.
 
-FASTQ parsing and primer-based aptamer extraction
+---
 
-Sequence clustering with isONclust and HDBSCAN
+## 🔍 Overview
 
-Embedding generation using the Nucleotide Transformer
+The pipeline performs the following steps:
 
-Cluster quality evaluation (alignment score, entropy, outlier ratio)
+1. **Parsing FASTQ files** with raw sequencing reads.
+2. **Filtering reads** based on known primer sequences.
+3. **Clustering sequences** using `isONclust` and optionally `HDBSCAN` on learned embeddings.
+4. **Generating embeddings** using the pre-trained `Nucleotide Transformer` model.
+5. **Evaluating clusters** with metrics such as alignment score, entropy, and outlier ratio.
+6. **Extracting aptamer candidates** based on high-consistency clusters.
+7. **Visualizing alignments** with Clustal Omega and Jalview.
 
-Multiple sequence alignment and visualization (Clustal Omega + Jalview)
+All steps are implemented in a reproducible Jupyter Notebook and optimized for GPU acceleration where possible.
 
-Final aptamer extraction with lab-tested results for SARS-CoV-2 spike protein
+---
 
-The entire pipeline is implemented in Python 3.10 using Jupyter Notebooks and open-source bioinformatics tools.
+## 🗂️ Repository Structure
+
+├── datasets/
+│ ├── sample1.fastq
+│ ├── sample2.fastq
+│ ├── sample3.fastq
+│ └── sample4.fastq
+│
+├── pipeline/
+│ └── aptamer_search.ipynb
+│
+├── README.md
